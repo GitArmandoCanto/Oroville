@@ -1,0 +1,316 @@
+/* Enter your custom styles here */
+.icon{
+    margin-left: 15px;
+    margin-right: 50px;
+    margin-top: 3px;
+    font-size: 0.975rem;
+    
+    
+}
+.comboLabel0{
+    margin-left: 47px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 100px;
+    
+}
+.lblSubmit{
+    margin-top: 48px;
+    margin-bottom: 40px;
+    margin-left: 4px;
+    height: 200%;
+    font-size: 1rem;
+}
+.comboLabel9{
+    margin-left: 47px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 150px;
+    
+}
+.labelLeft2x2{
+    margin-left: 60px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 135px;
+    
+}
+.labelright3x3{
+    margin-left: 60px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 147px;
+    
+}
+.labelCalcul1{
+    margin-left: 200px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 147px;
+    
+}
+
+.labelCalcul2{
+    margin-left: 60px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 147px;
+    
+}
+
+.labelCenter2x2{
+    margin-left: 6px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 30px;
+
+
+    
+}
+.textCenter2x2{
+    margin-left: 150px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 30px;
+
+
+    
+}
+
+.LblRemLongT{
+    margin-left: 47px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 335px;
+    
+}
+.comboLabelHy{
+    margin-left: 47px;
+    margin-right: 4px;
+    margin-top: 45px;
+    font-size: 0.975rem;
+    width: 150px;
+    
+}
+
+.labelRemLong{
+    margin-left: 47px;
+    margin-right: 4px;
+    margin-top: 45px;
+    font-size: 0.975rem;
+    width: 150px;
+    
+}
+.txtRem_L{
+    margin-left: 47px;
+    margin-right: 4px;
+    margin-top: 45px;
+    font-size: 0.975rem;
+    width: 290px;
+    
+}
+.comboLabelSR{
+    
+    margin-left: 6px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 30px;
+    
+}
+
+
+.comboLabel{
+    margin-left: 47px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 225px;
+    
+}
+.comboLabel1{
+    margin-left: 47px;
+    margin-right: 4px;
+    margin-top: .5px;
+    font-size: 0.975rem;
+    width: 225px;
+    
+}
+.comboLabel3{
+    margin-left: 47px;
+    margin-right: 4px;
+    margin-top: 0px;
+    font-size: 0.975rem;
+    width: 225px;
+    
+}
+.comboLabel2{
+    margin-left: 10px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 180px;
+    
+}
+
+.comboLabel_margin{
+    margin-left: 15px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    
+}
+.HeaderLabelS{
+    font-size: 80%;
+    margin-left: 40px;
+    margin-right: 8px;
+}   
+HeaderLabelS_r{
+    font-size: 80%;
+    margin-right: 8px;
+}
+.HeaderLabelM{
+    font-size: 0.975rem;
+    margin-left: 40px;
+}
+.titleM{
+    font-size: 0.975rem;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.titleMr{
+    text-align: right;
+    font-size: 0.975rem;
+    margin-right: 40px;
+    margin-top: 40px;
+    
+}
+.titleDWR{
+    font-size: 0.995rem;
+    margin-top: 40px;
+}
+.titleFD{
+    font-size: 0.995rem;
+
+}
+.titleMNC{
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+.titledate{
+    font-size: 0.975rem;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.titleOpNme{
+    font-size: 0.995rem;
+
+}
+
+.HeaderLabelL{
+    font-size: 125%;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn {
+    margin-left: 70px;
+  }
+  .btnr {
+    margin-right: 10px;
+  }
+
+  .btnLongRem {
+    margin-left: 710px;
+  }
+  .btnrRem {
+    margin-top: 38px;
+    margin-left: 910px;
+    
+  }
+  .cbx_green{
+    margin-left: 15px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 225px;
+    background-color: green;
+  }
+  .cbx_blue{
+    margin-left: 15px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 225px;
+    background-color: blue;
+  }
+  .cbx_yellow{
+    margin-left: 15px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 225px;
+    background-color: yellow;
+  }
+  .cbx_orange{
+    margin-left: 15px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 225px;
+    background-color: orange;
+  }
+  .cbx_red{
+    margin-left: 15px;
+    margin-right: 4px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width: 225px;
+    background-color: red;
+  }
+  .table{
+    background-color: rgb(245, 245, 245);
+  }
+  .tablefont{
+      font-weight: bolder;
+      font-size: 150px;
+  }
+  .btnSubmit{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 200%;
+    font-size: 1rem;
+  }
+  .rmrks{
+      margin-left: 47px;
+  }
+  .rmrks1{
+    margin-right: 55px;
+
+}
+
+.hy{
+    margin-left: 45px;
+    
+}
+  .chxbxlbl{
+    margin-left: 47px;
+    margin-top: 7.5px;
+    font-size: 0.975rem;
+    width:400px;
+    
+}.wcdTble{
+    margin-left: 24px;
+}
+.TblTitle{
+    font-size: 0.975rem;
+    margin-left: 47px;
+}

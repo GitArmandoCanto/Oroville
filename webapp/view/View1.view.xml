@@ -1,0 +1,1069 @@
+<mvc:View 
+    controllerName="orovillenmsp.orovilleapp.controller.View1"
+    id="IdView"
+    xmlns:uxap="sap.uxap"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:lay="sap.ui.layout"
+    xmlns:css="sap.ui.core.CSSSize"
+    xmlns:ObHead="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:calendar="sap.ui.unified.calendar"   
+>
+    <Shell id="shell">
+        <App id="app" autoFocus="false">
+            <pages>
+                <Page id="page" title="{i18n>title}" showHeader="true">
+                 <ScrollContainer id="sc"
+		                height="100%"
+		                width="100%"
+		                vertical="true"
+                        horizontal="true"
+                        
+                        > 
+              <FlexBox id="flxbx0" alignItems="Start">   <!-- Flexbox tipo de contenedor horizontal, los objetos se alinean horizontalmente  -->
+    <!-- Sección de cabecera  -->
+    <!--#region Cabecera -->
+
+                        <!-- State of California  -->
+                  
+                    <Label id="lbl_hdstate" text="{i18n>lbl_hdstate}" class="titleM"  width="auto" >
+                    <layoutData><!-- growfactor 1 todos los objetos dentro del contenedor se dividen en espacios iguales  -->
+                        <FlexItemData id="flxitdata0" growFactor="1"/>
+                    </layoutData>
+                    </Label>
+
+                    <lay:VerticalLayout id="vly0"> <!-- Contenedor vertical, los objetos se alienan uno debajo del otro  -->
+
+                    <!-- lbl_hddept DEPARTMENT OF WATER RESOURCES  -->
+                    <Label id="lbl_hddept" text="{i18n>lbl_hddept}" class="titleDWR" width="100%" textAlign="Center">
+                    <layoutData>
+                        <FlexItemData id="flxitdata1" growFactor="1"/>
+                    </layoutData>
+                    </Label>
+
+                    <!-- lbl_hddept OROVILLE FIELD DIVISION  -->
+                    <Label id="lbl_hdflddiv" text="{i18n>lbl_hdflddiv}" class="titleFD" width="100%" textAlign="Center">
+                    <layoutData>
+                        <FlexItemData id="flxitdata2" growFactor="1" maxHeight="100%" maxWidth="100%" minHeight="0%" minWidth="0%" baseSize="10%"/>
+                    </layoutData>
+                    </Label>
+
+                     <!-- lbl_hdmidcond MIDNIGHT CONDITIONS  -->
+                     <Label id="lbl_hdmidcond" text="{i18n>lbl_hdmidcond}" class="titleMNC" width="100%" design="Bold" textAlign="Center" vAlign="Bottom">
+                     <layoutData>
+                        <FlexItemData id="flxitdata3" growFactor="1"/>
+                    </layoutData>
+                    </Label>
+
+                    <!-- lbl_hddate se obtiene del sistema, controller funcion oninit  -->
+                    <Label width="100%" id="lbl_hddate" text="{/valDateFormatted}" textAlign="Center" vAlign="Bottom" class="titledate">
+                    <layoutData>
+                        <FlexItemData id="flxitdata4" growFactor="1"/>
+                    </layoutData>
+                    </Label>
+                    
+                     </lay:VerticalLayout>   
+    <!-- Termina layout vertical para agrupar cabecera -->
+                     
+                    <!-- lbl_hdresage The Resources Agency -->
+                    <Label id="lbl_hdresage" text="{i18n>lbl_hdresage}" class="titleMr" width="100%" textAlign="End">
+                     
+                    <layoutData>
+                        <FlexItemData id="flxitdata6" growFactor="1"/>
+                    </layoutData>
+                    </Label>
+                    <Label id="lbl_hdresagesp" text=""  width="40px" textAlign="End"/>
+                 </FlexBox> 
+        <!-- Termina sección de cabecera -->
+
+         <!-- Inicia sección de nombre de operador -->
+                <FlexBox id="flxbx1" alignItems="Center" class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems">
+                <!-- se creo un flexbox "vacío como separador" -->
+                <Label id="lbl_hdopempty" text="" class="titleOpNme" design="Bold" width="100%" textAlign="Begin">
+                    <layoutData>
+                        <FlexItemData id="flxitdata7" growFactor="1"/>
+                    </layoutData>
+                    </Label>
+
+                <!-- lbl_hddopname Operator Name: " -->
+                <Label width="100%" id="lbl_hddopname" text="{i18n>lbl_hddopname}" labelFor="ipt_hdopname" class="sapUiMediumMarginEnd" textAlign="End">
+                </Label>
+                    <FlexBox id="flxbx2" alignItems="Center">
+                      <Input id="ipt_hdopname" value="{/valOpName}" width="300px" class="sapUiMediumMarginBegin" textAlign="Begin" tooltip="The field display the name of the user currently logged in" enabled="false"/>
+                    
+                    </FlexBox><!-- se creo un flexbox "vacío como separador" -->
+                    <Label id="lbl_hdopempty1" text="" design="Bold" width="100%" textAlign="Center">
+                    <layoutData>
+                        <FlexItemData id="flxitdata10" growFactor="1"/>
+                    </layoutData>
+                    </Label>
+                </FlexBox>
+                 <Label width="100%" id="lbl_hddopnamesp" text="" labelFor="ipt_hdopname" class="titleDWR" textAlign="End"/>
+            
+<!-- Termina sección de nombre de operador -->
+ <!--#endregion  -->
+ 
+
+<!--#region Security Threat Levels  -->
+    <!-- Empieza Cabecera de sección Security Threat Levels" -->
+                <FlexBox id="flx7">
+                        <!-- Security Threat Levels -->
+                <Label text="{i18n>lblSecThTvHdr}" id="lblSecThTvHdr" design="Bold" class="HeaderLabelM"/>
+                </FlexBox>
+
+                 <lay:VerticalLayout id="vl_SecThreat_lvls" class="sapUiContentPadding equalColumns">
+    <!-- Termina Cabecera de sección Security Threat Levels" -->
+            <!-- Inicia sección de Security Threat Levels" -->
+ 
+        <!-- Security Threat Levels items" -->
+                     <FlexBox id="flx_SecThreatLvls">
+                        <!-- lbl_scaHost=Scada on Host: --> 
+                        <Label id="lbl_SecThreatLvls_nat" text="{i18n>lbl_SecThreatLvls_nat}" class="comboLabel0"/>
+
+                             <!-- Los items de combo box se declaran en control y se instancían con items="{/lst_AquedCtrl}" -->
+                             <!-- selectedKey valor seleccionado por default -->
+                        <ComboBox id="cbx_SecThreatLvls_nat" items="{/lstStlNat}" 
+                        selectedKey="{/val_lstStlNat}" tooltip="{/val_TTipCombo}" 
+                        width="180px"
+                        change="OnCbxChng" 
+                        app:cbxName="cbx_SecThreatLvls_nat" 
+                        app:dataSource="lstStlNat" 
+                        app:selkey="val_lstStlNat"
+                        app:icon="SecThr_color"
+                        >
+                            <items>
+                            <!-- key="{key}" text="{text} se instancían los valores de la lista declarada en el controlador-->
+                            <core:Item id="coreitm_SecThreatLvls_nat" key="{key}" text="{text}"/>
+                            </items>
+                        </ComboBox>
+                            <core:Icon size="1.5em" id="SecThr_color" src="sap-icon://border" class="icon" />
+                        <Label id="lbl_exp_date0" text="{i18n>lbl_exp_date}" class="comboLabel9" visible="false"  />
+                        <DatePicker id="SecTLExpD0" 
+                        value="{/val_StlExpD0}" class="comboLabel" 
+                        displayFormat="MM/dd/yyyy" valueFormat="yyyyMMdd" 
+                        width="180px" textAlign="Begin" visible="false" />                      
+                        </FlexBox>
+
+
+
+
+                        <FlexBox id="flx_SecThreatLvls1">
+                        <!-- lbl_SecThreatLvls_dwr=DWR: -->
+                         <Label id="lbl_SecThreatLvls_dwr" text="{i18n>lbl_SecThreatLvls_dwr}" 
+                         class="comboLabel0"/>
+
+                        <ComboBox id="cbx_SecThreatLvls_dwr" items="{/lstStlDwr}" 
+                        selectedKey="{/val_lstStlDwr}" 
+                        tooltip="{/val_TTipCombo}" 
+                        width="180px"
+                        change="OnCbxChng" 
+                        app:cbxName="cbx_SecThreatLvls_dwr" 
+                        app:dataSource="lstStlDwr" 
+                        app:selkey="val_lstStlDwr"
+                        app:icon="SecDwr_color">
+                            <items>
+                            <!-- key="{key}" text="{text} se instancían los valores de la lista declarada en el controlador-->
+                            <core:Item id="coreitm_SecThreatLvls_dwr" key="{key}" text="{text}"/>
+                            </items>
+                        </ComboBox>
+                         <core:Icon size="1.5em" id="SecDwr_color" src="sap-icon://border" class="icon"/>
+                        <Label id="lbl_exp_date1" text="{i18n>lbl_exp_date}" class="comboLabel9"   visible="false"/>
+                         <DatePicker id="SecTLExpD1" 
+                        value="{/val_StlExpD1}" class="comboLabel" 
+                        displayFormat="MM/dd/yyyy" valueFormat="yyyyMMdd" 
+                        width="180px" textAlign="Begin"
+                        visible="false"
+                        />
+                       </FlexBox>
+ 
+                      <FlexBox id="flx_SthreadRem">
+                     <Label id="lblSecThreadRem" text="{i18n>lblSecThreadRem}" class="comboLabel0"></Label>
+			            <Input id="ipt_threatI" 
+                        value="{/val_threatInf}" 
+                        width="960px" 
+                        class="comboLabel" 
+                        maxLength="255" 
+                        type="Text" tooltip="{/valTTremark}" textAlign="Initial">                           
+                        </Input>
+                        <Button id="btn_threat_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnr" app:id="ipt_threatI" icon="sap-icon://delete"/>
+                    </FlexBox>
+                       </lay:VerticalLayout>
+        <!-- Complex conditions" -->
+<!--#endregion Complex Conditions-->
+
+
+
+<!--#region Complex Conditions-->
+                    
+    <!-- Inicia sección Complex Conditions" -->
+                <!--#region Complex Conditions-->
+                <!--Cabecera-->
+                    <FlexBox id="flxComplCond">
+                    <!-- LBL Complex Conditions:" -->
+                    <Label text="{i18n>lbl_CompCtrl1}" id="lbl_CompCtrl1" design="Bold" class="HeaderLabelM"/>
+                    </FlexBox>
+
+                    <lay:VerticalLayout id="vlJurCtrl" class="sapUiContentPadding equalColumns">
+
+                       <FlexBox id="flx_SecComplx1">
+                        <!-- lbl_ComplxIn=Complex In: -->
+                         <Label id="lbl_ComplxIn" text="{i18n>lbl_ComplxIn}" 
+                         class="comboLabel9"/>
+
+                        <ComboBox id="cbx_CompCond_cmpIn" items="{/lstCCCIn}" 
+                        selectedKey="{/val_lstCCCIn}" 
+                        tooltip="{/val_TTipCombo}" 
+                        width="180px"
+                        change="OnCbxChng" 
+                        app:cbxName="cbx_CompCond_cmpIn" 
+                        app:dataSource="lstCCCIn" 
+                        app:selkey="val_lstCCCIn"
+                        app:icon="SecDwr_color">
+                            <items>
+                            <!-- key="{key}" text="{text} se instancían los valores de la lista declarada en el controlador-->
+                            <core:Item id="coreitm_CompCond_cmpIn" key="{key}" text="{text}"/>
+                            </items>
+                        </ComboBox>
+             
+                       </FlexBox>
+
+                       <FlexBox id="flx_SecComplx2">
+                        <!-- lbl_iso regularion: -->
+                         <Label id="lbl_Isoreg" text="{i18n>lbl_Isoreg}" 
+                         class="comboLabel9"/>
+
+                        <ComboBox id="cbx_CompCond_Iso" items="{/lstCCISoReg}" 
+                        selectedKey="{/val_lstCCISoReg}" 
+                        tooltip="{/val_TTipCombo}" 
+                        width="180px"
+                        change="OnCbxChng" 
+                        app:cbxName="cbx_CompCond_Iso" 
+                        app:dataSource="lstCCISoReg" 
+                        app:selkey="val_lstCCISoReg"
+                        app:icon="SecDwr_color">
+                            <items>
+                            <!-- key="{key}" text="{text} se instancían los valores de la lista declarada en el controlador-->
+                            <core:Item id="coreitm_CompCond_Iso" key="{key}" text="{text}"/>
+                            </items>
+                        </ComboBox>
+             
+                       </FlexBox>
+
+                        <FlexBox id="flx_SecComplx3">
+                        <!-- complex voltage: -->
+                         <Label id="lbl_CompV" text="{i18n>lbl_CompV}" 
+                         class="comboLabel9"/>
+
+                        <ComboBox id="cbx_CompCond_Cvolt" items="{/lstCCCVolt}" 
+                        selectedKey="{/val_lstCCCVolt}" 
+                        tooltip="{/val_TTipCombo}" 
+                        width="180px"
+                        change="OnCbxChng" 
+                        app:cbxName="cbx_CompCond_Cvolt" 
+                        app:dataSource="lstCCCVolt" 
+                        app:selkey="val_lstCCCVolt"
+                        app:icon="SecDwr_color">
+                            <items>
+                            <!-- key="{key}" text="{text} se instancían los valores de la lista declarada en el controlador-->
+                            <core:Item id="coreitm_CompCond_Cvolt" key="{key}" text="{text}"/>
+                            </items>
+                        </ComboBox>
+             
+                       </FlexBox>
+
+                     <FlexBox id="flx_SecComplx4" class="columns">
+                         <!--  OTC Max: -->
+                       <Label id="lbl_OtcM" text="{i18n>lbl_lbl_OtcM}" class="comboLabel9"/>
+                        <!-- Los items de combo box se declaran en control y se instancían con items="{/lst_AquedCtrl}" -->
+                        <!-- selectedKey valor seleccionado por default -->
+                        <Input id="ipt_OtcMax" 
+                        app:name="ipt_OtcMax" 
+                        app:val="val_OtcMax" 
+                        app:digitsallowed="3"
+                        app:decAllwd="" 
+                        app:error="'OTC Max'" 
+                        value="{/val_OtcMax}" 
+                        width="180px" 
+                        class="comboLabel" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_TooltipOtcMax}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_OtcMatch0Mw" text="{i18n>lbl_OtcMatchMw}" class="comboLabelSR"/>
+
+                         <!--  OTC Match: -->
+                       <Label id="lbl_OtcMatch" text="{i18n>lbl_OtcMatch}" class="comboLabel9"/>
+                        <!-- Los items de combo box se declaran en control y se instancían con items="{/lst_AquedCtrl}" -->
+                        <!-- selectedKey valor seleccionado por default -->
+                        <Input id="ipt_OtcMatch" 
+                        app:name="ipt_OtcMatch" 
+                        app:val="val_OtcMatch" 
+                        app:digitsallowed="3"
+                        app:decAllwd="" 
+                        app:error="'OTC Match'" 
+                        value="{/val_OtcMatch}" 
+                        width="180px" 
+                        class="comboLabel" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_TooltipOtcMax}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_OtcMatchMw" text="{i18n>lbl_OtcMatchMw}" class="comboLabelSR"/>
+                    </FlexBox>
+                    <!-- Complex conditions HY-->
+                    <FlexBox id="flx_SecComplx5" class="columns">
+                    <Label id="lbl_Hy1" text="{i18n>lbl_Hy1}" class="comboLabelHy"/>
+                     <Button id="btn_hy1_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnrRem" app:id="ipt_hy1_ltxt" icon="sap-icon://delete"/>
+                     
+                    </FlexBox>
+                    <FlexBox id="flx_SecComplx6" class="columns">
+                    <Label id="lbl_Hy1_e" text="" class="hy"/>
+                       <Input id="ipt_hy1_ltxt" 
+                        value="{/val_HY1}" 
+                        width="1165px" 
+                        class="comboLabel" 
+                        liveChange=""
+                        maxLength="255" 
+                        type="Text" tooltip="{/valTTremark}" textAlign="Initial">                           
+                        </Input>
+                     </FlexBox>
+                     
+                 <FlexBox id="flx_SecComplx7" class="columns">
+                    <Label id="lbl_Hy2" text="{i18n>lbl_Hy2}" class="comboLabelHy"/>
+                     <Button id="btn_hy2_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnrRem" app:id="ipt_hy2_ltxt" icon="sap-icon://delete"/>
+                     
+                    </FlexBox>
+                    <FlexBox id="flx_SecComplx9" class="columns">
+                    <Label id="lbl_Hy2_e" text="" class="hy"/>
+                       <Input id="ipt_hy2_ltxt" 
+                        value="{/val_HY2}" 
+                        width="1165px" 
+                        class="comboLabel" 
+                        liveChange=""
+                        maxLength="255" 
+                        type="Text" tooltip="{/valTTremark}" textAlign="Initial">                           
+                        </Input>
+                     </FlexBox>
+
+                   <FlexBox id="flx_SecComplx10" class="columns">
+                    <Label id="lbl_Hy3" text="{i18n>lbl_Hy3}" class="comboLabelHy"/>
+                     <Button id="btn_hy3_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnrRem" app:id="ipt_hy3_ltxt" icon="sap-icon://delete"/>
+                     
+                    </FlexBox>
+                    <FlexBox id="flx_SecComplx11" class="columns">
+                    <Label id="lbl_Hy3_e" text="" class="hy"/>
+                       <Input id="ipt_hy3_ltxt" 
+                        value="{/val_HY3}" 
+                        width="1165px" 
+                        class="comboLabel" 
+                        liveChange=""
+                        maxLength="255" 
+                        type="Text" tooltip="{/valTTremark}" textAlign="Initial">                           
+                        </Input>
+                     </FlexBox>
+
+                   <FlexBox id="flx_SecComplx12" class="columns">
+                    <Label id="lbl_Hy4" text="{i18n>lbl_Hy4}" class="comboLabelHy"/>
+                     <Button id="btn_hy4_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnrRem" app:id="ipt_hy4_ltxt" icon="sap-icon://delete"/>
+                     
+                    </FlexBox>
+                    <FlexBox id="flx_SecComplx13" class="columns">
+                    <Label id="lbl_Hy4_e" text="" class="hy"/>
+                       <Input id="ipt_hy4_ltxt" 
+                        value="{/val_HY4}" 
+                        width="1165px" 
+                        class="comboLabel" 
+                        liveChange=""
+                        maxLength="255" 
+                        type="Text" tooltip="{/valTTremark}" textAlign="Initial">                           
+                        </Input>
+                     </FlexBox>
+
+                    <FlexBox id="flx_SecComplx14" class="columns">
+                    <Label id="lbl_Hy5" text="{i18n>lbl_Hy5}" class="comboLabelHy"/>
+                     <Button id="btn_hy5_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnrRem" app:id="ipt_hy5_ltxt" icon="sap-icon://delete"/>
+                     
+                    </FlexBox>
+                    <FlexBox id="flx_SecComplx15" class="columns">
+                    <Label id="lbl_Hy5_e" text="" class="hy"/>
+                       <Input id="ipt_hy5_ltxt" 
+                        value="{/val_HY5}" 
+                        width="1165px" 
+                        class="comboLabel" 
+                        liveChange=""
+                        maxLength="255" 
+                        type="Text" tooltip="{/valTTremark}" textAlign="Initial">                           
+                        </Input>
+                     </FlexBox>
+
+                    <FlexBox id="flx_SecComplx16" class="columns">
+                    <Label id="lbl_Hy6" text="{i18n>lbl_Hy6}" class="comboLabelHy"/>
+                     <Button id="btn_hy6_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnrRem" app:id="ipt_hy6_ltxt" icon="sap-icon://delete"/>
+                     
+                    </FlexBox>
+                    <FlexBox id="flx_SecComplx17" class="columns">
+                    <Label id="lbl_Hy6_e" text="" class="hy"/>
+                       <Input id="ipt_hy6_ltxt" 
+                        value="{/val_HY6}" 
+                        width="1165px" 
+                        class="comboLabel" 
+                        liveChange=""
+                        maxLength="255" 
+                        type="Text" tooltip="{/valTTremark}" textAlign="Initial">                           
+                        </Input>
+                     </FlexBox>
+
+
+
+
+                      <FlexBox id="flxORI">
+                    <!--  Ori" -->
+                    <Label text="{i18n>lbl_ORILbl}" id="lbl_ORILbl" design="Bold" class="HeaderLabelM"/>
+                    </FlexBox>
+                      <FlexBox id="flx_SecORI" class="columns">
+                         <!--  ORI: -->
+                       <Label id="lbl_Intake1" text="{i18n>lbl_Intake1}" class="comboLabel9"/>
+                        <!-- Los items de combo box se declaran en control y se instancían con items="{/lst_AquedCtrl}" -->
+                        <!-- selectedKey valor seleccionado por default -->
+                        <Input id="ipt_Intake1" 
+                        app:name="ipt_Intake1" 
+                        app:val="val_ORI_Intk1" 
+                        app:digitsallowed="2"
+                        app:decAllwd="" 
+                        app:error="'Intake #1 Shutters'" 
+                        value="{/val_ORI_Intk1}" 
+                        width="180px" 
+                        class="comboLabel" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{i18n>entmaxcfs}" textAlign="End">                           
+                        </Input>
+
+                         <!-- Intake2: -->
+                       <Label id="lbl_Intake2" text="{i18n>lbl_Intake2}" class="comboLabel9"/>
+                        <!-- Los items de combo box se declaran en control y se instancían con items="{/lst_AquedCtrl}" -->
+                        <!-- selectedKey valor seleccionado por default -->
+                        <Input id="ipt_Intake2" 
+                        app:name="ipt_Intake2" 
+                        app:val="val_ORI_Intk2" 
+                        app:digitsallowed="3"
+                        app:decAllwd="" 
+                        app:error="'Intake #2 Shutters'" 
+                        value="{/val_ORI_Intk2}" 
+                        width="180px" 
+                        class="comboLabel" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{i18n>entmaxcfs}" textAlign="End">                           
+                        </Input>
+                       
+                    </FlexBox>
+
+                    <!-- OSW remark: -->
+                    <FlexBox id="flx_OSWRemark0">
+                    <Label text="{i18n>lbl_OSWLbl}" id="lbl_oswtITLE" design="Bold" class="HeaderLabelM"/>
+                    </FlexBox>
+                     <FlexBox id="flx_OSWRemark">
+                        <!-- lbl_Bapp_on_pltSwyd=Plant & SWYD Conditions Normal, Except:-->
+                        <Label id="lbl_Bapp_on_pltSwyd" text="{i18n>lbl_OSW_T}" class="comboLabel" width="350px"/>
+                        <Button id="btn_Bapp_on_pltSwyd_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnLongRem" app:id="OSW_OrComprmkTxt" icon="sap-icon://delete"/>
+                        </FlexBox>
+		                <FlexBox id="flx_OSWRemark2">
+                     <Label id="lblbapppltSwydTxtRmrk" text="" class="rmrks"></Label>
+			            <TextArea id="OSW_OrComprmkTxt" value="{/val_Oswrem}" width="1163px" height="200px" tooltip="{/valTTremark}" />
+		                </FlexBox>
+                    <!-- FIn OSW remark: -->
+                     <!-- Hyatt Plant remark: -->
+                    <FlexBox id="flx_hyatt0">
+                    <Label text="{i18n>lbl_hyattlbl}" id="lbl_hyatttITLE" design="Bold" class="HeaderLabelM"/>
+                    </FlexBox>
+                     <FlexBox id="flx_hyattRemark1">
+                        <!-- lbl_Bapp_on_pltSwyd=Plant & SWYD Conditions Normal, Except:-->
+                        <Label id="lbl_hyatt_sub" text="{i18n>lbl_hyatt_subtRem}" class="comboLabel" width="350px"/>
+                        <Button id="btn_hyattRem_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnLongRem" app:id="hyattPlantrmkTxt" icon="sap-icon://delete"/>
+                        </FlexBox>
+		                <FlexBox id="flx_hyattRemark2">
+                     <Label id="lblbapppltSwydTxtRmrk1" text="" class="rmrks"></Label>
+			            <TextArea id="hyattPlantrmkTxt" value="{/val_HyattPlant}" width="1163px" height="200px" tooltip="{/rmk_tooltip}" />
+		                </FlexBox>
+                     <!-- FIN Hyatt Plant remark: -->
+                    <!-- thermalito Plant remark: -->
+
+
+                     <FlexBox id="flx_thermal">
+                    <Label text="{i18n>lbl_thermal_pl}" id="lbl_ThermalTitle" design="Bold" class="HeaderLabelM"/>
+                    </FlexBox>
+                     <FlexBox id="flx_thermalRemark1">
+                       
+                        <Label id="lbl_thermalP_sub" text="{i18n>lbl_thermal_subtRem}" class="comboLabel" width="350px"/>
+                        <Button id="btn_thermPRem_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnLongRem" app:id="ThermalPlantrmkTxt" icon="sap-icon://delete"/>
+                        </FlexBox>
+		                <FlexBox id="flx_thermalRemark2">
+                     <Label id="lblthermalTxtRmrk1" text="" class="rmrks"></Label>
+			            <TextArea id="ThermalPlantrmkTxt" value="{/val_ThermalitoPlant}" width="1163px" height="200px" tooltip="{/valTTremark}" />
+		                </FlexBox>
+                    <!-- FIN thermalito Plant remark: -->
+                    <!--  thermalito Diversion remark: -->
+                    
+                     <FlexBox id="flx_thermalDiv">
+                    <Label text="{i18n>lbl_thermalDiv_pl}" id="lbl_ThermaldivTitle" design="Bold" class="HeaderLabelM"/>
+                    </FlexBox>
+                     <FlexBox id="flx_thermalDivRemark1">
+                      
+                        <Label id="lbl_thermalDiv_sub" text="{i18n>lbl_thermal_subtRem}" class="comboLabel" width="350px"/>
+                        <Button id="btn_thermDivRem_btnClear" text="{i18n>btn_clear}" press="onClear" class="btnLongRem" app:id="ThermalDivrmkTxt" icon="sap-icon://delete"/>
+                        </FlexBox>
+		                <FlexBox id="flx_thermalDivRemark2">
+                     <Label id="lblthermalDivTxtRmrk1" text="" class="rmrks"></Label>
+			            <TextArea id="ThermalDivrmkTxt" value="{/val_Thermalitodivision}" width="1163px" height="200px" tooltip="{/valTTremark}" />
+		                </FlexBox>
+                     <!-- FIN thermalito Diversion remark: -->
+
+                     <!--Flood Control Max storage elevation-->
+                    <FlexBox id="flx_FloodC0">
+                    <Label text="{i18n>lbl_floodTitle}" id="lbl_floodTitle" design="Bold" class="HeaderLabelM"/>
+                    </FlexBox>
+
+                     <FlexBox id="flx_FloodC1" class="columns">
+                      <!--Elevation: -->
+                       <Label id="lblFloodElevation" text="{i18n>lblFloodElevation}" class="labelLeft2x2"/>
+                        <Input id="ipt_FloodElev" 
+                        app:name="ipt_FloodElev" 
+                        app:val="val_FloodElev" 
+                        app:digitsallowed="3"
+                        app:decAllwd="2" 
+                        app:error="'Elevation'" 
+                        value="{/val_FloodElev}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipaf}" textAlign="End">                           
+                        </Input>
+                         <Label id="lbl_FloodElevAF" text="{i18n>lbl_sbpp_ft}" class="comboLabelSR"/>
+
+                         <!--storage: -->
+                       <Label id="lbl_floodStorage" text="{i18n>lbl_floodStorage}" class="labelLeft2x2"/>
+                        <!-- Los items de combo box se declaran en control y se instancían con items="{/lst_AquedCtrl}" -->
+                        <!-- selectedKey valor seleccionado por default -->
+                        <Input id="ipt_Floodstor" 
+                        app:name="ipt_Floodstor" 
+                        app:val="val_FloodStorage" 
+                        app:digitsallowed="8"
+                        app:decAllwd="" 
+                        app:error="'Storage'" 
+                        value="{/val_FloodStorage}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipaf}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_OtcMatchMaw" text="{i18n>lbl_floodStAf}" class="comboLabelSR"/>
+                    </FlexBox>
+                          <!--Fin Flood Control Max storage-->
+                          
+                           <!--Pool elevations-->
+                    <FlexBox id="flx_pool1">
+                    <Label text="{i18n>lbl_poolTitle}" id="lbl_poolTitle" design="Bold" class="HeaderLabelM"/>
+                    </FlexBox>
+
+                     <FlexBox id="flx_pool2" class="columns">
+                      <!--Lake-->
+                       <Label id="lbl_poolLike" text="{i18n>lbl_poolLike}" class="labelLeft2x2"/>
+                        <Input id="ipt_pool_lke" 
+                        app:name="ipt_pool_lke" 
+                        app:val="val_PoolLake" 
+                        app:digitsallowed="3"
+                        app:decAllwd="2" 
+                        app:error="'Lake'" 
+                        value="{/val_PoolLake}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipft}" textAlign="End">                           
+                        </Input>
+                         <Label id="lbl_PoolT" text="{i18n>lbl_sbpp_ft}" class="comboLabelSR"/>
+
+                         <!--Th Forebay: -->
+                       <Label id="lbl_poolThFor" text="{i18n>lbl_poolThFor}" class="labelLeft2x2"/>
+                        <!-- Los items de combo box se declaran en control y se instancían con items="{/lst_AquedCtrl}" -->
+                        <!-- selectedKey valor seleccionado por default -->
+                        <Input id="ipt_PoolThFor" 
+                        app:name="ipt_PoolThFor" 
+                        app:val="val_PoolThFore" 
+                        app:digitsallowed="3"
+                        app:decAllwd="2" 
+                        app:error="'TH Forebay'" 
+                        value="{/val_PoolThFore}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipft}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_sbpp_ft" text="{i18n>lbl_sbpp_ft}" class="comboLabelSR"/>
+                    </FlexBox>
+                       
+                         <!--Tdd-->
+                   <FlexBox id="flx_pool7" class="columns">
+                    
+                       <Label id="lbl_poolTdd" text="{i18n>lbl_poolTdd}" class="labelLeft2x2"/>
+                        <Input id="ipt_pool_Tdd" 
+                        app:name="ipt_pool_Tdd" 
+                        app:val="val_PoolTdd" 
+                        app:digitsallowed="3"
+                        app:decAllwd="2" 
+                        app:error="'TDD'" 
+                        value="{/val_PoolTdd}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipft}" textAlign="End">                           
+                        </Input>
+                         <Label id="lbl_poolThAftb" text="{i18n>lbl_sbpp_ft}" class="comboLabelSR"/>
+
+                         <!--Th Afterbay: -->
+                       <Label id="lbl_poolThAftbr" text="{i18n>lbl_poolThAftb}" class="labelLeft2x2"/>
+
+                        <Input id="ipt_PoolAfB" 
+                        app:name="ipt_PoolAfB" 
+                        app:val="val_PoolThAftr" 
+                        app:digitsallowed="3"
+                        app:decAllwd="2" 
+                        app:error="'TH Afterbay'" 
+                        value="{/val_PoolThAftr}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipft}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_sbpp1_ft" text="{i18n>lbl_sbpp_ft}" class="comboLabelSR"/>
+                    </FlexBox>
+                        <!--FIN Pool elevations-->
+
+                      <!--Complex Water Resleases-->
+                    <FlexBox id="flx_Comp0">
+                    <Label text="{i18n>lbl_CwrTitle}" id="lbl_CwrTitle" design="Bold" class="HeaderLabelM"/>
+                    </FlexBox>
+
+                     <FlexBox id="flx_Comp1" class="columns">
+                     <!--OR Spillway-->
+                       <Label id="lbl_CwrOrSp" text="{i18n>lbl_CwrOrSp}" class="labelLeft2x2"/>
+                        <Input id="ipt_CwrOR" 
+                        app:name="ipt_CwrOR" 
+                        app:val="val_CwrOrSp" 
+                        app:digitsallowed="6"
+                        app:decAllwd="" 
+                        app:error="'OR Spillway'" 
+                        value="{/val_CwrOrSp}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipcfs}" textAlign="End">                           
+                        </Input>
+                         <Label id="lbl_Cwrcfs" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+
+                         <!--TH Div Dam: -->
+                       <Label id="lbl_CwrThD" text="{i18n>lbl_CwrThDiv}" class="labelLeft2x2"/>
+
+                        <Input id="ipt_CwrThDiv" 
+                        app:name="ipt_CwrThDiv" 
+                        app:val="val_CwrThDi" 
+                        app:digitsallowed="6"
+                        app:decAllwd="" 
+                        app:error="'TH Div Dam'" 
+                        value="{/val_CwrThDi}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipcfs}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_Cwrcfs1" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+
+                         <!--Western Lateral: -->
+                       <Label id="lbl_CwrWestL" text="{i18n>lbl_CwrWestL}" class="labelright3x3"/>
+                        <Input id="ipt_CwrWestLa" 
+                        app:name="ipt_CwrWestLa" 
+                        app:val="val_CwrWeLa" 
+                        app:digitsallowed="6"
+                        app:decAllwd="" 
+                        app:error="'Western Lateral'" 
+                        value="{/val_CwrWeLa}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipcfs}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_Cwrcfs2" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+                    </FlexBox>
+
+                    <!--Complex Water Resleases-->
+                    <!--Palermo canal-->
+
+                     <FlexBox id="flx_Comp2" class="columns">
+                     
+                       <Label id="lbl_CwrPalermo" text="{i18n>lbl_CwrPalermo}" class="labelLeft2x2"/>
+                        <Input id="ipt_CwrPalermo" 
+                        app:name="ipt_CwrPalermo" 
+                        app:val="val_CwrPalermo" 
+                        app:digitsallowed="6"
+                        app:decAllwd="" 
+                        app:error="'Palermo Canal'" 
+                        value="{/val_CwrPalermo}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipcfs}" textAlign="End">                           
+                        </Input>
+                         <Label id="lbl_Cwrcfs3" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+
+                         <!--River Outlet: -->
+                       <Label id="lbl_CwrRivO" text="{i18n>lbl_CwrRivO}" class="labelLeft2x2"/>
+
+                        <Input id="ipt_CwrRivOut" 
+                        app:name="ipt_CwrRivOut" 
+                        app:val="val_CwrRivOut" 
+                        app:digitsallowed="6"
+                        app:decAllwd="" 
+                        app:error="'River Outlet'" 
+                        value="{/val_CwrRivOut}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipcfs}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_Cwrcfs4" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+
+                         <!--Richvale canal: -->
+                       <Label id="LblCwrRichvaleL" text="{i18n>LblCwrRichvale}" class="labelright3x3"/>
+                        <Input id="ipt_CwrRich" 
+                        app:name="ipt_CwrRich" 
+                        app:val="val_CwrRichC" 
+                        app:digitsallowed="6"
+                        app:decAllwd="" 
+                        app:error="'Richvale canal'" 
+                        value="{/val_CwrRichC}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipcfs}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_Cwrcfs5" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+                    </FlexBox>
+
+                     <!--Complex Water Resleases-->
+                    <!--TH Bypass Gate-->
+
+                     <FlexBox id="flx_Comp3" class="columns">
+                     
+                       <Label id="lbl_CwrThBy" text="{i18n>lbl_CwrThBy}" class="labelLeft2x2"/>
+                        <Input id="ipt_CwrThByp" 
+                        app:name="ipt_CwrThByp" 
+                        app:val="val_CwrThB" 
+                        app:digitsallowed="6"
+                        app:decAllwd="" 
+                        app:error="'TH Bypass Gate'" 
+                        value="{/val_CwrThB}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipcfs}" textAlign="End">                           
+                        </Input>
+                         <Label id="lbl_Cwrcfs6" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+
+                         <!--Sutter Butte Canal: -->
+                       <Label id="lbl_CwrSutButCa" text="{i18n>lbl_CwrSutButCa}" class="labelLeft2x2"/>
+
+                        <Input id="ipt_CwrSutB" 
+                        app:name="ipt_CwrSutB" 
+                        app:val="val_CwrSutBu" 
+                        app:digitsallowed="6"
+                        app:decAllwd="" 
+                        app:error="'Sutter Butte Canal'" 
+                        value="{/val_CwrSutBu}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipcfs}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_Cwrcfs7" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+
+                         <!--Western Main  canal: -->
+                       <Label id="lbl_CwrWestMain" text="{i18n>lbl_CwrWestMain}" class="labelright3x3"/>
+                        <Input id="ipt_CwrWestM" 
+                        app:name="ipt_CwrWestM" 
+                        app:val="val_CwrWestMain" 
+                        app:digitsallowed="6"
+                        app:decAllwd="" 
+                        app:error="'Western Main Canal'" 
+                        value="{/val_CwrWestMain}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{/val_Tooltipcfs}" textAlign="End">                           
+                        </Input>
+                        <Label id="lbl_Cwrcfs8" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+                    </FlexBox>
+
+                    <!--Total to River-->
+
+                     <FlexBox id="flx_Comp4" class="columns">
+                     <Label id="lbl_CwrTotalRivr" text="{i18n>lbl_CwrTotalRivr}" class="labelCalcul1"/>
+                      <Input id="ipt_CwrTotalRivr" 
+                        app:name="ipt_CwrTotalRivr" 
+                        app:val="val_CwrTotalRivr" 
+                        app:digitsallowed="15"
+                        app:decAllwd="" 
+                        app:error="'Check Wester Main Canal'" 
+                        value="{/val_CwrTotalRivr}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{i18n>entmaxcfs}" textAlign="End" enabled="false">                           
+                        </Input>
+                        <Label id="lbl_Cwrcfs9" text="{i18n>lblCwrCfs}" class="comboLabelSR" />
+
+                      <Label id="lbl_CwrTotalThAft" text="{i18n>lbl_CwrTotalThAft}" class="labelCalcul2"/>
+                      <Input id="ipt_CwrTotalThAftrb" 
+                        app:name="ipt_CwrTotalThAftrb" 
+                        app:val="val_CwrTotalThAftrb" 
+                        app:digitsallowed="10"
+                        app:decAllwd="" 
+                        app:error="'Check Wester Main Canal'" 
+                        value="{/val_CwrTotalThAftrb}" 
+                        width="150px" 
+                        class="comboLabelSR" 
+                        liveChange="OnLiveChgEvt" 
+                        type="Text" tooltip="{i18n>entmaxcfs}" textAlign="End" enabled="false"
+                        >                           
+                        </Input>
+                        <Label id="lbl_Cwrcfs10" text="{i18n>lblCwrCfs}" class="comboLabelSR"/>
+
+
+                     </FlexBox>
+
+
+
+
+                    
+
+
+
+
+
+                         </lay:VerticalLayout>
+<!--#region Complex conditions-->
+
+
+
+
+
+
+<!--Tables at the end-->
+<!--Inicia sección Tablas de reportes-->
+<!--Inicia sección Tablas de reportes-->
+              <lay:VerticalLayout id="vlyTbls" class="sapUiContentPadding equalColumns">
+                    <FlexBox id="flx_Submitbtn">
+                       <Label id="lbl_submspc" text="" class="comboLabel" width="375px"/>
+                        <Button id="btn_Submit" text="{i18n>btn_submit}" press="onSubmit" class="btnSubmit"
+                         app:id="" icon="sap-icon://accept" width="250px"/>
+
+                         <Label id="lbl_submerror" text="{/valSubmitted}" class="lblSubmit" width="275px"/>
+                    </FlexBox>
+
+                    <FlexBox id="flx_TblWcd">
+                                            <!-- lbl_TblWcd=WCD Reporting at 2400 -->
+                        <Label text="{i18n>lbl_TblWcd}" id="lbl_TblWcd" design="Bold" class="TblTitle"/>
+                    </FlexBox>
+
+                        <FlexBox id="wcdTable">
+                            <Label id="lblWcdTbl" class="wcdTble" text=""></Label>
+                            <Table id="wcd_table"  
+                            width="1000px" 
+                            items="{/val_wcd_table}" 
+                            backgroundDesign="Solid" 
+                            fixedLayout="false" class="wcdTble">
+                                <columns>
+                                    <Column id="Funloc" >
+                                        <header>
+                                            <Label 
+                                            class="tablefont"
+                                            design="Bold"
+                                            text="Fun Loc" 
+                                            id="lblFunLoc"/>
+                                        </header>
+                                    </Column>
+                                    <Column id="Type" >
+                                        <header>
+                                            <Label 
+                                            class="tablefont"
+                                            design="Bold"
+                                            text="Type" 
+                                            id="lblTxtType"/>
+                                        </header>
+                          
+                                    </Column>
+                                    <Column id="Wcd">
+                                        <header>
+                                            <Label 
+                                            class="tablefont"
+                                            design="Bold"
+                                            text="WCD#" 
+                                            id="lblWcd"/>
+                                        </header>
+                          
+                                    </Column>
+
+                                    <Column id="Issued">
+                                        <header>
+                                            <Label 
+                                            class="tablefont"
+                                            design="Bold"
+                                            text="Issued To" 
+                                            id="lblIssTo"/>
+                                        </header>
+                                    </Column>
+
+                                    <Column id="ShTxt" class="tablefont">
+                                        <header >
+                                            <Label 
+                                            class="tablefont"
+                                            design="Bold"
+                                            text="Short Text" 
+                                            id="lblSrtTxt"/>
+                                        </header>
+                         
+                                    </Column>
+                                </columns>
+
+                            <items >
+                                <ColumnListItem id="_IDGenColumnListItem1" class="table">
+                                    <cells>
+                                        <Text id="Tplnr" text="{Tplnr}"/>
+                                        <Text id="Wcuse" text="{Wcuse}"/>
+                                        <Text id="Wcnr" text="{Wcnr}"/>
+                                        <Text id="Genvname" text="{Genvname}"/>
+                                        <Text id="Stxt" text="{Stxt}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </FlexBox>
+
+                        <Label text="" id="lbl_TblWcdSpace" design="Bold" class="HeaderLabelM"/>
+                        <FlexBox id="flx_TblPlantStat">
+                                            <!-- lbl_TblPlantStat=Plant and Unit Status Reporting at 2400 -->
+                        <Label text="{i18n>lbl_TblPlantStat}" id="lbl_TblPlantStat" design="Bold" class="TblTitle"/>
+                        </FlexBox>
+                       
+                    <FlexBox id="plntTable">
+                        <Label id="lblPlntTbl" class="wcdTble" text=""></Label>
+                        <Table id="plnt_unit"  
+                        width="1000px" 
+                        items="{/val_plntt}"  
+                        backgroundDesign="Solid" 
+                        fixedLayout="false" class="wcdTble">
+                        <columns >
+                          <Column id="colfunloc1" width="185px">
+                          <header >
+                             <Label 
+                             class="tablefont"
+                             design="Bold"
+                             text="Fun Loc" 
+                             id="lblPuntFunLoc"/>
+                             </header>
+                          </Column>
+
+                         <Column id="colstatus" width="100px">
+                          <header>
+                             <Label 
+                             class="tablefont"
+                             design="Bold"
+                             text="Status" 
+                             id="lblPuntStat"/>
+                             </header>
+                          </Column>
+                          
+                         <Column id="colmw" width="100px">
+                         <header>
+                             <Label 
+                             class="tablefont"
+                             design="Bold"
+                             text="MW" 
+                             id="lblPuntMw"/>
+                             </header>
+                          </Column>
+
+                         <Column id="colcfs">
+                         <header>
+                             <Label 
+                             class="tablefont"
+                             design="Bold"
+                             text="CFS" 
+                             id="lblPuntCfs"/>
+                             </header>
+                          </Column>
+
+                      
+                        </columns>
+                        <items>
+                        <ColumnListItem id="lstitem2" class="table" >
+                        <cells>
+                        <Text id="txtSapFuncLoc" text="{SapFuncLoc}" />
+                        <Text id="txtstatus1" text="{Status}"/>
+                        <Text id="txtmw1" text="{Mw}"/>
+                        <Text id="txtcfs1" text="{Cfs}"/>
+                        </cells>
+                        </ColumnListItem>
+                        </items>
+                        </Table>
+                        </FlexBox>
+                         </lay:VerticalLayout>
+<!--Termina sección Tablas de reportes-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Termina sección Tablas de reportes-->
+
+
+
+
+
+
+
+
+
+
+
+<!--Inicia sección Tablas de reportes-->
+    
+<!--Termina sección Tablas de reportes-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--FIN_Tables at the end-->
+                    <content />
+                     </ScrollContainer> 
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

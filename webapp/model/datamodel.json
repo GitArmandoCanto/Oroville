@@ -1,0 +1,126 @@
+{
+    "lstStlNat": [
+        {
+            "key": "keyStlNat1",
+            "text": "NORMAL"
+        },
+        {
+            "key": "keyStlNat2",
+            "text": "ELEVATED"
+        },
+        {
+            "key": "keyStlNat3",
+            "text": "IMMINENT"
+        }
+    ],
+    "lstStlDwr": [
+        {
+            "key": "keyStlDwr1",
+            "text": "NORMAL"
+        },
+        {
+            "key": "keyStlDwr2",
+            "text": "ELEVATED"
+        },
+        {
+            "key": "keyStlDwr3",
+            "text": "IMMINENT"
+        }
+    ],
+
+    "lstCCCIn": [
+        {
+            "key": "keylstCCCIn1",
+            "text": "GEN MODE"
+        },
+        {
+            "key": "keylstCCCIn2",
+            "text": "PUMP MODE"
+        }
+    ],
+
+    "lstCCISoReg": [
+        {
+            "key": "keylstCCISoReg1",
+            "text": "ON"
+        },
+        {
+            "key": "keylstCCISoReg2",
+            "text": "OFF"
+        }
+    ],
+
+    "lstCCCVolt": [
+        {
+            "key": "keylstCClstCCCVolt1",
+            "text": "UNITY"
+        },
+        {
+            "key": "keylstCClstCCCVolt2",
+            "text": "BUCK"
+        },
+        {
+            "key": "keylstCClstCCCVolt3",
+            "text": "BOOST"
+        }
+
+    ],
+"valDateFormatted":"",
+ "valDate":"",
+ "valOpName":"",
+ "val_OtcMax":"",
+ "val_OtcMatch":"",
+ "val_threatInf":"",
+ "val_HY1":"",
+ "val_HY2":"",
+ "val_HY3":"",
+ "val_HY4":"",
+ "val_HY5":"",
+ "val_HY6":"",
+ "val_ORI_Intk1":"",
+ "val_ORI_Intk2":"",
+ "val_rmrkTooltip":"Enter exceptions and remarks",
+ "val_TooltipOtcMax":"Enter mw value",
+ "val_Tooltipft":"Enter ft value",
+ "val_Tooltipaf":"Enter af value",
+ "val_Tooltipcfs":"Enter cfs value",
+ "val_lstStlNat":"",
+ "val_lstStlDwr":"",
+ "val_lstCCCIn":"",
+ "val_lstCCCVolt":"",
+ "val_lstCCISoReg":"",
+ "val_wcd_table":"",
+ "val_plntt":"",
+ "val_Oswrem":"",
+ "val_HyattPlant":"",
+ "val_ThermalitoPlant":"",
+ "val_Thermalitodivision":"",
+ "val_FloodElev":"",
+ "val_FloodStorage":"",
+ "val_PoolLake":"",
+ "val_PoolThFore":"",
+ "val_PoolThAftr":"",
+ "val_PoolTdd":"",
+  "val_CwrOrSp":"",
+  "val_CwrPalermo":"",
+  "val_CwrThB":"",
+  "val_CwrThDi":"",
+  "val_CwrRivOut":"",
+  "val_CwrSutBu":"",
+  "val_CwrWeLa":"",
+  "val_CwrRichC":"",
+  "val_CwrWestMain":"",
+  "val_CwrTotalRivr":"",
+  "val_CwrTotalThAftrb":"",
+  "val_StlExpD0":"",
+  "val_StlExpD1":"",
+  "val_TTipCombo":"To change: Click the drop-down arrow and make selection.",
+  "valTTremark":"Enter exceptions and remarks. This field will expand to accomodate yout text.",
+  "valMandt":"",
+  "valUsrName":"",
+  "valMcdate":"",
+  "val_Threatdt":"",
+  "val_Dthreatdt":"",
+  "valSubmitted":""
+
+}
